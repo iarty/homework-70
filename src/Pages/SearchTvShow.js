@@ -16,7 +16,7 @@ const SearchTvShow = () => {
     <div className="mt-5">
       <Input value={value} onChange={setValue} />
       <Dropdown />
-      {Object.keys(selectedTvShow).length && <TvShowPage />}
+      {!!Object.keys(selectedTvShow).length && <TvShowPage />}
     </div>
   );
 };
