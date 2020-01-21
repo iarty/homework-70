@@ -21,9 +21,8 @@ const TvShowPage = () => {
 
   return (
     <>
-      {loading || !Object.keys(selectedTvShow).length ? (
-        <Spinner />
-      ) : (
+      {loading && <Spinner />}
+      {!!Object.keys(selectedTvShow).length && (
         <div className="mt-3">
           <h1 className="text-center mb-4">{name}</h1>
           <div className="d-flex justify-content-between">

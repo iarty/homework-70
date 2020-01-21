@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import "./Dropdown.css";
 import { TvaMazeContext } from "../../Context/TvMazeSearch";
+import { Link } from "react-router-dom";
 
 const Dropdown = () => {
   const { searchResult, getTvShow, toggler } = useContext(TvaMazeContext);
@@ -16,13 +17,14 @@ const Dropdown = () => {
     >
       {searchResult.map((show, index) => (
         <div key={index}>
-          <p
+          <Link
+            to={`/show/${show.id}`}
             className="hoverable"
-            style={{ color: "#000", cursor: "pointer" }}
+            style={{ color: "#000" }}
             onClick={() => getTvShow(show.id)}
           >
             {show.name}
-          </p>
+          </Link>
         </div>
       ))}
     </div>
